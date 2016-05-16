@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    card_view:cardElevation="10dp"
+    android:layout_marginTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/avengers"
+            android:id="@+id/rating_poster"
+                android:elevation="10dp"
+            />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:id="@+id/linearLayout"
+                android:background="#424242">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:text="Movie Name"
+                    android:textSize="16dp"
+                    android:id="@+id/rating_title"
+                    android:background="#2d2c2c"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#9E9E9E"
+                    android:elevation="8dp"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Release Date"
+                android:id="@+id/rating_release_date"
+                android:background="#424242"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Popularity"
+                android:id="@+id/rating_popularity"
+                android:background="#424242"
+                android:layout_margin="8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Rating"
+                android:id="@+id/rating_text"
+                android:background="#424242"
+                android:layout_margin="8dp"
+                 />
+
+            <RatingBar
+                style="?attr/ratingBarStyleIndicator"
+                android:paddingTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:numStars="5"
+                android:id="@+id/ratingBar"
+                android:background="#424242"
+                />
+            </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#000" />
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#212121</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#CFD8DC</item>
+        <item name="android:textColorSecondary">#9E9E9E</item>
+        <item name="android:textColorPrimary">#CFD8DC</item>
+        <item name="android:textColorTertiary">#b6b2b2</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:fontFamily">Roboto-Thin.ttf</item>
+        <item name="android:actionBarStyle">@style/TransparentActionBar</item>
+        <!--<item name="android:textColorPrimaryInverse">#E0E0E0</item>-->
+        <!--<item name="android:textColorSecondaryInverse">#E0E0E0</item>-->
+        <!--<item name="android:textColorTertiaryInverse">#E0E0E0</item>-->
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="TransparentActionBar" parent="Theme.AppCompat.DayNight">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+</resources>
