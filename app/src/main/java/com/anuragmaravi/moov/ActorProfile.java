@@ -1,6 +1,7 @@
 package com.anuragmaravi.moov;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -51,7 +52,8 @@ public class ActorProfile extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actor_profile);
         actor_id=getIntent().getStringExtra("actor_id");
-        final_actor_descrption="http://api.themoviedb.org/3/person/"+"73968"+"?api_key=0744794205a0d39eef72cad8722d4fba";
+        //Toast.makeText(ActorProfile.this, actor_id, Toast.LENGTH_SHORT).show();
+        final_actor_descrption="http://api.themoviedb.org/3/person/"+actor_id+"?api_key=0744794205a0d39eef72cad8722d4fba";
         new ParseActorDescription().execute(final_actor_descrption);
 
 
@@ -60,7 +62,7 @@ public class ActorProfile extends Activity {
         actor_movies_recyclerView.setHasFixedSize(true);
         actor_movies_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         actor_movies_recyclerView.setLayoutManager(actor_movies_layoutManager);
-        new ParseActorMovies().execute("http://api.themoviedb.org/3/person/73968/movie_credits?api_key=0744794205a0d39eef72cad8722d4fba");
+        new ParseActorMovies().execute("http://api.themoviedb.org/3/person/"+actor_id+"/movie_credits?api_key=0744794205a0d39eef72cad8722d4fba");
 
 
         //Actor Images
@@ -68,7 +70,19 @@ public class ActorProfile extends Activity {
         actor_images_recyclerView.setHasFixedSize(true);
         actor_images_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         actor_images_recyclerView.setLayoutManager(actor_images_layoutManager);
-        new ParseActorImages().execute("http://api.themoviedb.org/3/person/73968/images?api_key=0744794205a0d39eef72cad8722d4fba");
+        new ParseActorImages().execute("http://api.themoviedb.org/3/person/"+actor_id+"/images?api_key=0744794205a0d39eef72cad8722d4fba");
+
+        //Set Fonts
+        Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+
+        TextView textView3 = (TextView) findViewById(R.id.textView_biography);
+        TextView textView4 = (TextView) findViewById(R.id.textViewactor_movies);
+        TextView textView5 = (TextView) findViewById(R.id.textView_actor_images);
+
+        textView3.setTypeface(typeface_light);
+        textView4.setTypeface(typeface_light);
+        textView5.setTypeface(typeface_light);
+
 
     }
 
@@ -132,11 +146,20 @@ public class ActorProfile extends Activity {
             actor_profile_imageView= (ImageView) findViewById(R.id.actor_profile_image);
 
 
-            name_textView.setText(name);
-            date_of_birth_textView.setText(birthday);
-            place_of_birth_textView.setText(place_of_birth);
+            name_textView.setText("Name:\n "+name);
+            date_of_birth_textView.setText("Date of Birth:\n "+birthday);
+            place_of_birth_textView.setText("Place of Birth: \n"+place_of_birth);
             biography_textView.setText(biography);
             ImageLoader.getInstance().displayImage(final_actor_profile_path, actor_profile_imageView);
+
+            //Set Fonts
+            Typeface typeface_thin = Typeface.createFromAsset(getAssets(),"Roboto-Thin.ttf");
+            Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+
+            name_textView.setTypeface(typeface_light);
+            date_of_birth_textView.setTypeface(typeface_light);
+            place_of_birth_textView.setTypeface(typeface_light);
+            biography_textView.setTypeface(typeface_thin);
 
         }
     }
@@ -201,7 +224,7 @@ public class ActorProfile extends Activity {
         @Override
         protected void onPostExecute(List<ListItem> result) {
             super.onPostExecute(result);
-            adaptera = new AdapterActorProfile((ArrayList<ListItem>) movieModelList);
+            adaptera = new AdapterActorProfile((ArrayList<ListItem>) movieModelList, getApplicationContext());
             actor_movies_recyclerView.setAdapter(adaptera);
         }
     }

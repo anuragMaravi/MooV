@@ -75,6 +75,7 @@ public class AdapterCredits extends RecyclerView.Adapter<AdapterCredits.ViewHold
             ListItem listItems=this.listItems.get(position);
             Intent intent = new Intent(this.ctx,ActorProfile.class);
             intent.putExtra("actor_id",listItems.getActor_id());
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             this.ctx.startActivity(intent);
         }
 

@@ -41,6 +41,7 @@ public class AdapterUpcomingMovies extends RecyclerView.Adapter<AdapterUpcomingM
     public void onBindViewHolder(ViewHolder holder, int position) {
         ListItem list =  listItems.get(position);
 
+
         holder.t1.setText("Release Date: "+list.getRelease_date());
         ImageLoader.getInstance().displayImage(listItems.get(position).getPoster_path(),holder.imageView);
         //

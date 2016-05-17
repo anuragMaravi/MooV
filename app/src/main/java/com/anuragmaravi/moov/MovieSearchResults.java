@@ -104,6 +104,7 @@ public class MovieSearchResults extends ActionBarActivity {
                     JSONObject finalObject = parentArray.getJSONObject(i);
                     ListItem movieModel = new ListItem();
                     movieModel.setCredits_character(finalObject.getString("original_title"));
+                    movieModel.setMovie_id(finalObject.getString("id"));
 
                     String poster_path = finalObject.getString("poster_path");
                     String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
@@ -135,7 +136,7 @@ public class MovieSearchResults extends ActionBarActivity {
         @Override
         protected void onPostExecute(List<ListItem> result) {
             super.onPostExecute(result);
-            adaptera = new AdapterActorProfile((ArrayList<ListItem>) movieModelList);
+            adaptera = new AdapterActorProfile((ArrayList<ListItem>) movieModelList,getApplicationContext());
             actor_movies_recyclerView.setAdapter(adaptera);
         }
     }

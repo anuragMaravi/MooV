@@ -22,7 +22,7 @@ public class AdapterActorProfile extends RecyclerView.Adapter<AdapterActorProfil
         Context ctx;
 
 
-public AdapterActorProfile(ArrayList<ListItem> items){
+public AdapterActorProfile(ArrayList<ListItem> items,Context ctx){
         super();
         this.listItems=items;
         this.ctx=ctx;
@@ -72,6 +72,7 @@ class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
         ListItem listItems=this.listItems.get(position);
         Intent intent = new Intent(this.ctx,Description.class);
         intent.putExtra("movie_id",listItems.getMovie_id());
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.ctx.startActivity(intent);
     }
 

@@ -1,13 +1,11 @@
 package com.anuragmaravi.moov;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,11 +54,14 @@ public class Description extends Activity {
     private RecyclerView.LayoutManager similar_layoutManager;
     private RecyclerView.Adapter similar_movies_adapter;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_description);
         movie_id=getIntent().getStringExtra("movie_id");
+        //Toast.makeText(Description.this, movie_id, Toast.LENGTH_SHORT).show();
         final_movie_id="http://api.themoviedb.org/3/movie/"+movie_id+"?api_key=0744794205a0d39eef72cad8722d4fba";
         new JSONTask().execute(final_movie_id);
 
@@ -80,13 +81,21 @@ public class Description extends Activity {
         new SimilarMoviesParsing().execute("http://api.themoviedb.org/3/movie/"+movie_id+"/similar?api_key=0744794205a0d39eef72cad8722d4fba");
 
 
-        //Font test
-        Typeface typeface1 = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+        //Font
+        Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+        Typeface typeface_thin = Typeface.createFromAsset(getAssets(),"Roboto-Thin.ttf");
+
+
         TextView textView = (TextView) findViewById(R.id.text);
-        textView.setTypeface(typeface1);
-        Typeface typeface = Typeface.createFromAsset(getAssets(),"Roboto-Thin.ttf");
-        TextView textView1 = (TextView) findViewById(R.id.description_overview);
-        textView1.setTypeface(typeface);
+        TextView textView1 = (TextView) findViewById(R.id.textView_cast);
+        TextView textView2 = (TextView) findViewById(R.id.textView_homepage);
+        TextView textView3 = (TextView) findViewById(R.id.textView_similarMovies);
+
+        textView.setTypeface(typeface_light);
+        textView1.setTypeface(typeface_light);
+        textView2.setTypeface(typeface_light);
+        textView3.setTypeface(typeface_light);
+
 
     }
 
@@ -236,6 +245,19 @@ public class Description extends Activity {
             ImageLoader.getInstance().displayImage(final_poster_path, poster_imageView);
             ImageLoader.getInstance().displayImage(final_backdrop_path, backdrop_imageView);
 
+            //set Font
+            Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+            Typeface typeface_thin = Typeface.createFromAsset(getAssets(),"Roboto-Thin.ttf");
+
+            title_textView.setTypeface(typeface_light);
+            tagline_textView.setTypeface(typeface_light);
+            overview_textView.setTypeface(typeface_thin);
+            release_date_textView.setTypeface(typeface_thin);
+            homepage_textView.setTypeface(typeface_thin);
+            runtime_textView.setTypeface(typeface_thin);
+            status_textView.setTypeface(typeface_thin);
+            vote_average_textView.setTypeface(typeface_thin);
+
         }
     }
 
@@ -303,9 +325,5 @@ public class Description extends Activity {
         }
     }
 
-    public void test(View view){
-        Intent intent= new Intent(this,ActorProfile.class);
-        startActivity(intent);
-    }
 
 }

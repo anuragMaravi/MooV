@@ -1,13 +1,40 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#212121">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#212121">
+    android:background="#212121"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEARCH RESULTS"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:id="@+id/text"
+        android:layout_marginTop="8dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="#9E9E9E"
+        android:layout_marginBottom="8dp"
+        />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerView"/>
 
-</RelativeLayout>
+</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

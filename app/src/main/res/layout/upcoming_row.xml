@@ -32,7 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="(2014)"
             android:textColor="#e6e5e5"
             android:textSize="8dp"
             android:background="#55000000"

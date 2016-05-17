@@ -2,6 +2,7 @@ package com.anuragmaravi.moov;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
@@ -81,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(tab.getPosition());
             }
         });
+
+        //Set Fonts
+        Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+        Typeface typeface_thin = Typeface.createFromAsset(getAssets(),"Roboto-Thin.ttf");
 
     }
 
