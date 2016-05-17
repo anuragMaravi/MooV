@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -42,6 +43,7 @@ public class AdapterTopRatedMovies extends RecyclerView.Adapter<AdapterTopRatedM
         holder.textViewPopularity.setText("Popularity:   "+list.getPopularity());
         holder.textViewReleaseDate.setText("Release Date:   "+list.getRelease_date());
         holder.textViewRating.setText("Rating:   "+list.getVote_average());
+        holder.ratingBar.setRating(list.getVote_average()/2);
         ImageLoader.getInstance().displayImage(listItems.get(position).getPoster_path(),holder.imageViewPoster);
     }
 
@@ -56,6 +58,7 @@ public class AdapterTopRatedMovies extends RecyclerView.Adapter<AdapterTopRatedM
         public TextView textViewRating;
         public TextView textViewReleaseDate;
         public ImageView imageViewPoster;
+        public RatingBar ratingBar;
 
         ArrayList<ListItem> listItems = new ArrayList<ListItem>();
         Context ctx;
@@ -71,6 +74,7 @@ public class AdapterTopRatedMovies extends RecyclerView.Adapter<AdapterTopRatedM
             textViewReleaseDate = (TextView) itemView.findViewById(R.id.rating_release_date);
             textViewPopularity = (TextView) itemView.findViewById(R.id.rating_popularity);
             imageViewPoster=(ImageView)itemView.findViewById(R.id.rating_poster);
+            ratingBar= (RatingBar) itemView.findViewById(R.id.ratingBar);
         }
 
         @Override

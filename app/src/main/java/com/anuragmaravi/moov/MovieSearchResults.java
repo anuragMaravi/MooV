@@ -3,6 +3,7 @@ package com.anuragmaravi.moov;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -31,7 +32,6 @@ import java.util.List;
  * Created by anuragmaravi on 16/05/16.
  */
 public class MovieSearchResults extends ActionBarActivity {
-    TextView textView;
     private RecyclerView actor_movies_recyclerView;
     private RecyclerView.LayoutManager actor_movies_layoutManager;
     private  RecyclerView.Adapter adaptera;
@@ -54,6 +54,8 @@ public class MovieSearchResults extends ActionBarActivity {
                 searchManager.getSearchableInfo(getComponentName()));
 
         return true;
+
+
     }
 
     @Override
@@ -69,11 +71,16 @@ public class MovieSearchResults extends ActionBarActivity {
             query=query.replace(" ","+");
             actor_movies_recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
             actor_movies_recyclerView.setHasFixedSize(true);
-            actor_movies_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+            actor_movies_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
             actor_movies_recyclerView.setLayoutManager(actor_movies_layoutManager);
             new ParseActorMovies().execute("http://api.themoviedb.org/3/search/movie?query="+query+"&api_key=0744794205a0d39eef72cad8722d4fba");
 
+            //Set Fonts
+            Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+            Typeface typeface_thin = Typeface.createFromAsset(getAssets(),"Roboto-Thin.ttf");
 
+            TextView textView1 = (TextView) findViewById(R.id.textView_search);
+            textView1.setTypeface(typeface_light);
         }
     }
 

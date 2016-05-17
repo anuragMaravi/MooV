@@ -6,7 +6,7 @@
     android:background="@drawable/black2">
 
     <TextView
-        android:id="@+id/text_view"
+        android:id="@+id/textView_splash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Moo-V"

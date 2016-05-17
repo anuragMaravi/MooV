@@ -76,10 +76,16 @@ public class FragmentUpcomingMovies extends Fragment {
                     movieModel.setMovie_id(finalObject.getString("id"));
                     movieModel.setRelease_date(finalObject.getString("release_date"));
 
+
                     String poster_path = finalObject.getString("poster_path");
                     String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    String backdrop_path= finalObject.getString("backdrop_path");
+                    String final_backdrop_path="http://image.tmdb.org/t/p/w1000"+backdrop_path;
                     movieModel.setPoster_path(final_poster_path);
+                    movieModel.setBackdrop_path(final_backdrop_path);
+
                     movieModelList.add(movieModel);
+
                 }
 
                 return movieModelList;

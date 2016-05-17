@@ -5,11 +5,31 @@ package com.anuragmaravi.moov;
  */
 public class ListItem {
     private String title;
-    private String vote_average;
+    private float vote_average;
     private String popularity;
     private String poster_path;
     private String movie_id;
     private String release_date;
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
+    }
+
+    private String backdrop_path;
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    private String overview;
 
     //Credits Data
     private String credits_name;
@@ -30,11 +50,11 @@ public class ListItem {
         this.title = title;
     }
 
-    public String getVote_average() {
+    public float getVote_average() {
         return vote_average;
     }
 
-    public void setVote_average(String vote_average) {
+    public void setVote_average(float vote_average) {
         this.vote_average = vote_average;
     }
 

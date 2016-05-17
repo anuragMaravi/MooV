@@ -24,13 +24,20 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
 
             >
-            <ImageView
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:background="@drawable/imageview"-->
+                <!--android:fitsSystemWindows="true"-->
+                <!--app:layout_collapseMode="parallax"/>-->
+            <android.support.v4.view.ViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:background="@drawable/imageview"
+                android:id="@+id/viewPagerTop"
                 android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax"/>
+                app:layout_collapseMode="parallax"
+                />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -40,12 +47,7 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 android:background="#00000000"/>
 
-            <!--<android.support.v4.view.ViewPager-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:id="@+id/viewPagerTop"-->
-                <!--app:layout_collapseMode="parallax"-->
-                <!--/>-->
+
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>

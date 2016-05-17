@@ -73,7 +73,7 @@ public class FragmentTopRatedMovies extends Fragment {
                     movieModel.setMovie_id(finalObject.getString("id"));
                     movieModel.setRelease_date(finalObject.getString("release_date"));
                     movieModel.setPopularity(finalObject.getString("popularity"));
-                    movieModel.setVote_average(finalObject.getString("vote_average"));
+                    movieModel.setVote_average((float) finalObject.getDouble("vote_average"));
 
                     String poster_path = finalObject.getString("poster_path");
                     String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;

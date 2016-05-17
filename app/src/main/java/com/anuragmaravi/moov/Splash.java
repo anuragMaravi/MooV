@@ -2,10 +2,12 @@ package com.anuragmaravi.moov;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by anuragmaravi on 12/04/16.
@@ -32,5 +34,11 @@ public class Splash extends Activity {
             public void onAnimationRepeat(Animation animation) {
             }
         });
+
+        Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
+
+        TextView textView3 = (TextView) findViewById(R.id.textView_splash);
+
+        textView3.setTypeface(typeface_light);
     }
 }

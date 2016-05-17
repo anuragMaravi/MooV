@@ -39,7 +39,7 @@ public class AdapterSlidingViewpage extends PagerAdapter {
         View view=layoutInflater.inflate(R.layout.upcoming_viewpager_layout,container,false);
         ImageView imageView=(ImageView) view.findViewById(R.id.viewPagerIv);
         imageView.setImageResource(images[position]);
-        //ImageLoader.getInstance().displayImage(images[position], imageView);
+        //ImageLoader.getInstance().displayImage("http://image.tmdb.org/t/p/w1000/vsjBeMPZtyB7yNsYY56XYxifaQZ.jpg", imageView);
         container.addView(view);
 
         return view;

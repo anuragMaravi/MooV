@@ -97,6 +97,7 @@ public class Description extends Activity {
         textView3.setTypeface(typeface_light);
 
 
+
     }
 
     //Credits

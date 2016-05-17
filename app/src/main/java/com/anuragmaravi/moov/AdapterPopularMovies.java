@@ -43,7 +43,7 @@ public class AdapterPopularMovies extends RecyclerView.Adapter<AdapterPopularMov
         holder.textViewTitle.setText(list.getTitle());
         holder.textViewPopularity.setText("Popularity:   "+list.getPopularity());
         holder.textViewReleaseDate.setText("Release Date:   "+list.getRelease_date());
-        holder.textViewRating.setText(list.getVote_average());
+        holder.textViewRating.setText(list.getOverview());
         ImageLoader.getInstance().displayImage(listItems.get(position).getPoster_path(),holder.imageViewPoster);
     }
 

@@ -10,7 +10,7 @@
         android:src="@drawable/captain"
         android:layout_gravity="top"
         android:id="@+id/viewPagerIv"
-        android:scaleType="fitXY"/>
+        android:scaleType="centerCrop"/>
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->

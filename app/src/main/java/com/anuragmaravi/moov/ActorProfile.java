@@ -60,7 +60,7 @@ public class ActorProfile extends Activity {
         //credits
         actor_movies_recyclerView = (RecyclerView) findViewById(R.id.recyclerView_actor_movies);
         actor_movies_recyclerView.setHasFixedSize(true);
-        actor_movies_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        actor_movies_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
         actor_movies_recyclerView.setLayoutManager(actor_movies_layoutManager);
         new ParseActorMovies().execute("http://api.themoviedb.org/3/person/"+actor_id+"/movie_credits?api_key=0744794205a0d39eef72cad8722d4fba");
 
@@ -68,16 +68,18 @@ public class ActorProfile extends Activity {
         //Actor Images
         actor_images_recyclerView = (RecyclerView) findViewById(R.id.recyclerView_actor_images);
         actor_images_recyclerView.setHasFixedSize(true);
-        actor_images_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        actor_images_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
         actor_images_recyclerView.setLayoutManager(actor_images_layoutManager);
         new ParseActorImages().execute("http://api.themoviedb.org/3/person/"+actor_id+"/images?api_key=0744794205a0d39eef72cad8722d4fba");
 
         //Set Fonts
         Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
 
+
         TextView textView3 = (TextView) findViewById(R.id.textView_biography);
         TextView textView4 = (TextView) findViewById(R.id.textViewactor_movies);
         TextView textView5 = (TextView) findViewById(R.id.textView_actor_images);
+
 
         textView3.setTypeface(typeface_light);
         textView4.setTypeface(typeface_light);
