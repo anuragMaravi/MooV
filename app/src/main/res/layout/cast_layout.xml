@@ -17,10 +17,11 @@
         android:elevation="8dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="175dp"
+            android:layout_height="256dp"
             android:id="@+id/credits_profile_poster"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/avenger"/>
 
 
         <TextView

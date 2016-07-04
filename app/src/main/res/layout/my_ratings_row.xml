@@ -14,17 +14,20 @@
         android:orientation="horizontal">
 
             <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/avengers"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="256dp"
+            android:src="@drawable/avenger"
             android:id="@+id/rating_poster"
                 android:elevation="10dp"
+                android:scaleType="fitXY"
             />
 
 
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
 
@@ -90,9 +93,6 @@
                 android:background="#424242"
                 />
             </LinearLayout>
-
-
-
 
     </LinearLayout>
 

@@ -17,17 +17,16 @@
         android:elevation="8dp">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxHeight="750dp"
-            android:src="@drawable/avengers"
+            android:layout_width="175dp"
+            android:layout_height="256dp"
+            android:src="@drawable/avenger"
             android:id="@+id/upcoming_poster_imageView"
             android:scaleType="fitXY"
             />
 
         <TextView
             android:id="@+id/upcoming_release_date_textView"
-            android:layout_width="match_parent"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:textColor="#e6e5e5"

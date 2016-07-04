@@ -20,16 +20,19 @@
         >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/avengers"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="256dp"
+            android:src="@drawable/avenger"
             android:id="@+id/popular_imageView"
             android:elevation="10dp"
+            android:scaleType="fitXY"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:background="#424242">
             <!--<View-->
@@ -60,7 +63,7 @@
                 android:text="Release date"
                 android:textSize="12dp"
                 android:id="@+id/release_date_tv"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:background="#424242"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -68,15 +71,15 @@
                 android:text="Popularity"
                 android:textSize="12dp"
                 android:id="@+id/popularity_tv"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:background="#424242"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Movie overview"
-                android:textSize="8dp"
+                android:textSize="12dp"
                 android:id="@+id/overview_tv"
-                android:layout_margin="8dp"
+                android:layout_margin="4dp"
                 android:background="#424242"/>
         </LinearLayout>
     </LinearLayout>

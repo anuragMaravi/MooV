@@ -115,7 +115,7 @@ public class ActorProfile extends Activity {
                 place_of_birth=parentObject.getString("place_of_birth");
                 actor_id=parentObject.getString("id");
                 actor_profile_path=parentObject.getString("profile_path");
-                final_actor_profile_path="http://image.tmdb.org/t/p/w500"+actor_profile_path;
+                final_actor_profile_path="http://image.tmdb.org/t/p/w300"+actor_profile_path;
                 biography = parentObject.getString("biography");
 
 
@@ -197,7 +197,7 @@ public class ActorProfile extends Activity {
 
 
                     String poster_path = finalObject.getString("poster_path");
-                    String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    String final_poster_path="http://image.tmdb.org/t/p/w300"+poster_path;
                     movieModel.setCredits_profile_path(final_poster_path);
                     movieModelList.add(movieModel);
                 }
@@ -260,7 +260,7 @@ public class ActorProfile extends Activity {
                     ListItem movieModel = new ListItem();
 
                     String poster_path = finalObject.getString("file_path");
-                    String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    String final_poster_path="http://image.tmdb.org/t/p/w300"+poster_path;
                     movieModel.setActor_image_paths(final_poster_path);
                     movieModelList.add(movieModel);
                 }

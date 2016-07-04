@@ -17,8 +17,8 @@
         android:elevation="8dp">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="175dp"
+            android:layout_height="256dp"
             android:id="@+id/similar_movies_poster"
             android:scaleType="fitXY"/>
     </FrameLayout>

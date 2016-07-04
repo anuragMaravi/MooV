@@ -131,7 +131,7 @@ public class Description extends Activity {
                     movieModel.setActor_id(finalObject.getString("id"));
 
                     String poster_path = finalObject.getString("profile_path");
-                    String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    String final_poster_path="http://image.tmdb.org/t/p/w300"+poster_path;
                     movieModel.setCredits_profile_path(final_poster_path);
                     movieModelList.add(movieModel);
                 }
@@ -195,7 +195,7 @@ public class Description extends Activity {
                     runtime="Runtime:  "+parentObject.getString("runtime");
                     status="Status:  \n"+parentObject.getString("status");
                     vote_average="Rating:  "+parentObject.getString("vote_average");
-                    final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    final_poster_path="http://image.tmdb.org/t/p/w300"+poster_path;
                     overview = parentObject.getString("overview");
                     backdrop_path=parentObject.getString("backdrop_path");
                     final_backdrop_path="http://image.tmdb.org/t/p/w1000/"+backdrop_path;
@@ -292,7 +292,7 @@ public class Description extends Activity {
                     movieModel.setUpcoming_movie_id(finalObject.getString("id"));
 
                     String poster_path = finalObject.getString("poster_path");
-                    String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    String final_poster_path="http://image.tmdb.org/t/p/w300"+poster_path;
                     movieModel.setPoster_path(final_poster_path);
                     movieModelList.add(movieModel);
                 }

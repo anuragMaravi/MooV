@@ -47,12 +47,14 @@ public class FragmentInTheaters extends Fragment {
 
         layoutManager = new LinearLayoutManager(getContext());
 
+
         recyclerView.setLayoutManager(layoutManager);
         new JSONTask().execute("http://api.themoviedb.org/3/movie/now_playing?api_key=0744794205a0d39eef72cad8722d4fba");
 //
         return rootview;
 
     }
+
 
     public class JSONTask extends AsyncTask<String, String, List<ListItem>> {
         List<ListItem> movieModelList = new ArrayList<>();
@@ -86,7 +88,7 @@ public class FragmentInTheaters extends Fragment {
                     movieModel.setOverview(finalObject.getString("overview"));
 
                     String poster_path = finalObject.getString("poster_path");
-                    String final_poster_path="http://image.tmdb.org/t/p/w500"+poster_path;
+                    String final_poster_path="http://image.tmdb.org/t/p/w300"+poster_path;
                     movieModel.setPoster_path(final_poster_path);
                     movieModelList.add(movieModel);
                 }
