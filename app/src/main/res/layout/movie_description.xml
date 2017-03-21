@@ -17,7 +17,6 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="563px"
-            android:src="@drawable/captain"
             android:id="@+id/description_backdrop"
             android:scaleType="fitXY"
            />

@@ -10,6 +10,7 @@ public class ListItem {
     private String poster_path;
     private String movie_id;
     private String release_date;
+    String back;
 
     public String getBackdrop_path() {
         return backdrop_path;
@@ -136,6 +137,14 @@ public class ListItem {
 
     public void setActor_image_paths(String actor_image_paths) {
         this.actor_image_paths = actor_image_paths;
+    }
+
+    public String getBack() {
+        return back;
+    }
+
+    public void setBack(String back) {
+        this.back = back;
     }
 }
 

@@ -1,11 +1,13 @@
 package com.anuragmaravi.moov;
 
-import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +30,7 @@ import java.util.List;
 /**
  * Created by anuragmaravi on 12/05/16.
  */
-public class ActorProfile extends Activity {
+public class ActorProfile extends AppCompatActivity {
 
     TextView name_textView;
     TextView biography_textView;
@@ -51,6 +53,7 @@ public class ActorProfile extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actor_profile);
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         actor_id=getIntent().getStringExtra("actor_id");
         //Toast.makeText(ActorProfile.this, actor_id, Toast.LENGTH_SHORT).show();
         final_actor_descrption="http://api.themoviedb.org/3/person/"+actor_id+"?api_key=0744794205a0d39eef72cad8722d4fba";
@@ -71,6 +74,7 @@ public class ActorProfile extends Activity {
         actor_images_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
         actor_images_recyclerView.setLayoutManager(actor_images_layoutManager);
         new ParseActorImages().execute("http://api.themoviedb.org/3/person/"+actor_id+"/images?api_key=0744794205a0d39eef72cad8722d4fba");
+        Log.i("Actor Id",actor_id);
 
         //Set Fonts
         Typeface typeface_light = Typeface.createFromAsset(getAssets(),"Roboto-Light.ttf");
@@ -111,6 +115,7 @@ public class ActorProfile extends Activity {
                 String finalJson= buffer.toString();
                 JSONObject parentObject= new JSONObject(finalJson);
                 name=parentObject.getString("name");
+                getSupportActionBar().setTitle(name);
                 birthday=parentObject.getString("birthday");
                 place_of_birth=parentObject.getString("place_of_birth");
                 actor_id=parentObject.getString("id");
@@ -292,5 +297,14 @@ public class ActorProfile extends Activity {
             actor_image_adapter = new AdapterActorImages((ArrayList<ListItem>) movieModelList, getApplicationContext());
             actor_images_recyclerView.setAdapter(actor_image_adapter);
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,11 +1,12 @@
 package com.anuragmaravi.moov;
 
-import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +29,7 @@ import java.util.List;
 /**
  * Created by anuragmaravi on 12/04/16.
  */
-public class Description extends Activity {
+public class Description extends AppCompatActivity {
 
     TextView title_textView;
     TextView overview_textView;
@@ -61,6 +62,7 @@ public class Description extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_description);
         movie_id=getIntent().getStringExtra("movie_id");
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Toast.makeText(Description.this, movie_id, Toast.LENGTH_SHORT).show();
         final_movie_id="http://api.themoviedb.org/3/movie/"+movie_id+"?api_key=0744794205a0d39eef72cad8722d4fba";
         new JSONTask().execute(final_movie_id);
@@ -188,7 +190,8 @@ public class Description extends Activity {
                 String finalJson= buffer.toString();
                 JSONObject parentObject= new JSONObject(finalJson);
                     title=parentObject.getString("original_title");
-                    release_date="Release Date: \n"+parentObject.getString("release_date");
+                getSupportActionBar().setTitle(title);
+                release_date="Release Date: \n"+parentObject.getString("release_date");
                     tagline=parentObject.getString("tagline");
                     homepage=parentObject.getString("homepage");
                     poster_path=parentObject.getString("poster_path");
@@ -324,6 +327,16 @@ public class Description extends Activity {
             similar_movies_adapter = new AdapterSimilarMovies((ArrayList<ListItem>) movieModelList, Description.this);
             similar_movies_recyclerView.setAdapter(similar_movies_adapter);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

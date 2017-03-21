@@ -44,7 +44,6 @@ public class FragmentInTheaters extends Fragment {
 
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerView3);
         recyclerView.setHasFixedSize(true);
-
         layoutManager = new LinearLayoutManager(getContext());
 
 
